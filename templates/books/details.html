@@ -1,0 +1,26 @@
+{% extends 'index.html' %} {% block content %}
+
+<div class="card m-3" style="width: 18rem">
+  <img src="..." class="card-img-top" alt="Book not found" />
+  <div class="card-body">
+    <h4 class="card-title">{{book.title}}</h4>
+
+    <h5>
+      NumOfPages:
+      <span class="card-text">{{book.no_of_pages}}</span>
+    </h5>
+    <h5>
+      Price:
+      <span class="card-text">{{book.price}}</span>
+    </h5>
+    <h5>
+      Created At:
+      <span class="card-text">{{book.created_at}}</span>
+    </h5>
+    <h5>
+      Update At:
+      <span class="card-text">{{book.updated_at}}</span>
+    </h5>
+  </div>
+</div>
+{% endblock %}

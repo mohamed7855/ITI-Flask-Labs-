@@ -1,0 +1,49 @@
+{% extends 'index.html' %} {% block content %}
+<a href="{{url_for('book.create')}}" class="btn btn-secondary m-3">
+  Create New Book
+</a>
+{% if books %}
+<div
+  class="d-flex flex-row justify-content-start align-items-center align-self-center flex-wrap gap-3"
+>
+  {% for book in books %}
+  <div class="card" style="width: 18rem">
+    <img src="..." class="card-img-top" alt="..." />
+    <div class="card-body">
+      <h5 class="card-title">{{book.title}}</h5>
+      <h5>
+        ID:
+        <span class="card-text">{{book.id}}</span>
+      </h5>
+      <h5>
+        NumOfPages:
+        <span class="card-text">{{book.no_of_pages}}</span>
+      </h5>
+      <h5>
+        Price:
+        <span class="card-text">{{book.price}}</span>
+      </h5>
+      <h5>
+        Created At:
+        <span class="card-text">{{book.created_at}}</span>
+      </h5>
+      <h5>
+        Update At:
+        <span class="card-text">{{book.updated_at}}</span>
+      </h5>
+      <a href="{{url_for('book.details', id=book.id)}}" class="btn btn-primary"
+        >Details</a
+      >
+      <a href="{{url_for('book.update', id=book.id)}}" class="btn btn-success"
+        >Update</a
+      >
+      <a href="{{url_for('book.delete', id=book.id)}}" class="btn btn-danger"
+        >Delete</a
+      >
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{%else%}
+<h2>U have 0 Books</h2>
+{%endif%} {% endblock %}

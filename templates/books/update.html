@@ -1,0 +1,42 @@
+{% extends 'index.html' %} {% block content %}
+<form action="" method="POST">
+  <div class="mb-3">
+    <label class="form-label">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      value="{{book.title}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">no_of_pages</label>
+    <input
+      type="number"
+      name="nPages"
+      class="form-control"
+      value="{{book.no_of_pages}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">price</label>
+    <input
+      type="number"
+      name="price"
+      class="form-control"
+      value="{{book.price}}"
+    />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input
+      type="file"
+      name="image"
+      class="form-control"
+      value="{{book.image}}"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+{% endblock %}
